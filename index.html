@@ -12,15 +12,37 @@ Oh yeah
 </div>
   <input type="button" value="Dave" onclick="myCanvas()">
 <script>
+  var daveX = 10;
+  var daveY = 10;
+  var xChange = 0;
 function myCanvas() {
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
     var img = document.getElementById("dave");
-    ctx.drawImage(img,10,10);
+    ctx.drawImage(img,daveX,daveY);
 }
-  document.body.onkeydown = function(e){
-    alert(String.fromCharCode(e.keyCode)+" --> "+e.keyCode);
+  document.body.onkeyup = function(e){
+    if(String.fromCharCode(e.keyCode) == 'D'){
+      xChange = 0;
+    } elseif(String.fromCharCode(e.keyCode) == 'A'){
+      xChange = 0;
+    }
   };
+  
+  document.body.onkeydown = function(e){
+    if(String.fromCharCode(e.keyCode) == 'D'){
+      xChange = 1;
+    } elseif(String.fromCharCode(e.keyCode) == 'A'){
+      xChange = -1;
+    }
+  };
+  function timeout() {
+    setTimeout(function () {
+        daveX += xChange;
+        myCanvas();
+        timeout();
+    }, 100);
+}
 </script>
 </body>
 </html>
