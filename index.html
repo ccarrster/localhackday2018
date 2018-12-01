@@ -24,7 +24,7 @@ function myCanvas() {
   document.body.onkeyup = function(e){
     if(String.fromCharCode(e.keyCode) == 'D'){
       xChange = 0;
-    } elseif(String.fromCharCode(e.keyCode) == 'A'){
+    } else if(String.fromCharCode(e.keyCode) == 'A'){
       xChange = 0;
     }
   };
@@ -32,7 +32,7 @@ function myCanvas() {
   document.body.onkeydown = function(e){
     if(String.fromCharCode(e.keyCode) == 'D'){
       xChange = 1;
-    } elseif(String.fromCharCode(e.keyCode) == 'A'){
+    } else if(String.fromCharCode(e.keyCode) == 'A'){
       xChange = -1;
     }
   };
@@ -42,7 +42,7 @@ function myCanvas() {
         myCanvas();
         timeout();
     }, 100);
-}
+  }
 </script>
 </body>
 </html>
